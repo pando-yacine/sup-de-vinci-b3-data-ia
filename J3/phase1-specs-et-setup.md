@@ -44,6 +44,31 @@ mon-projet/
 
 ---
 
+## Étape 1-bis — Pousser sur GitHub (public)
+
+Le repo de votre groupe doit être **public sur GitHub**. C'est utile pour 3 raisons : (1) **visible sur votre CV**, (2) **prérequis** pour le déploiement auto via Hugging Face Spaces (Phase 2 & 5), (3) le **jury** y accède librement le jour de la soutenance.
+
+### Méthode 1 — via la CLI GitHub (`gh`)
+```bash
+gh repo create mon-projet --public --source=. --remote=origin --push
+```
+*(installer `gh` : `brew install gh` puis `gh auth login`)*
+
+### Méthode 2 — via l'UI GitHub
+1. Créer un repo **public** sur github.com (sans README ni .gitignore — votre repo local est la source).
+2. Connecter :
+```bash
+git remote add origin https://github.com/<user>/<projet>.git
+git branch -M main
+git push -u origin main
+```
+
+> **Vérif** : ouvrir `https://github.com/<user>/<projet>` dans un onglet privé → vous devez voir vos fichiers.
+
+> ⚠️ **Ne PAS commiter** : `.env` (secrets), `node_modules/`, `.venv/`, datasets > 50 Mo. Voir `.gitignore` du template.
+
+---
+
 ## Étape 2 — Configurer Claude Code (best practices)
 
 ### Le `CLAUDE.md` (la mémoire du projet)
@@ -187,6 +212,7 @@ Toujours : **plan d'abord**, **lire le diff**, **commiter**.
 ## ✅ Checklist Phase 1 (à cocher avant Phase 2)
 
 - [ ] Repo Git créé, **premier commit** fait
+- [ ] Repo poussé sur **GitHub (public)**
 - [ ] Arbo monorepo : `frontend/` + `backend/` + `docs/`
 - [ ] `README.md` initial à la racine
 - [ ] `CLAUDE.md` généré (via `/init`) **et complété**
@@ -197,4 +223,12 @@ Toujours : **plan d'abord**, **lire le diff**, **commiter**.
 - [ ] `docs/diagramme-sequence.md` + schéma mermaid `sequenceDiagram`
 - [ ] Au moins **3-5 commits** propres (`feat:`, `docs:`, `chore:`…)
 
-> **Si la checklist est verte → vous êtes prêts pour la Phase 2** (code et intégration du modèle).
+> **Si la checklist est verte → vous êtes prêts pour la Phase 2** (modèle + API V1 déployée).
+
+---
+
+## ➡️ Phase suivante
+
+**[`phase2-modele-api-v1.md`](./phase2-modele-api-v1.md)** : EDA approfondie, itération modèle, export `.pkl`, API FastAPI minimale, tests pytest, **premier déploiement Hugging Face Spaces**.
+
+*(Vue d'ensemble des 5 phases : [`README.md`](./README.md) du dossier J3.)*
