@@ -10,8 +10,8 @@ Ressources du module **B3 Data & IA** dispensé par [Yacine Arhaliass](https://g
 
 - **[J1 — Big Data approfondi + Spark](J1/README.md)** (20 mai)
 - **[J2 — Machine Learning Scikit-learn](J2/README.md)** (21 mai)
-- J3 — Dashboards & Streamlit (26 mai)
-- J4 — Production & Cloud Azure + soutenances (27 mai)
+- **[J3 — Du modèle au produit (React + FastAPI + HF Spaces, piloté Claude Code)](J3/README.md)** (26 mai)
+- **[J4 — Industrialiser + soutenances finales (CI/CD, README pro, grille /20)](J4/README.md)** (27 mai)
 
 ## Datasets pour le projet fil rouge
 
