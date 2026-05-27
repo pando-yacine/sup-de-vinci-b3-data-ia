@@ -1,132 +1,114 @@
 # Questions de cours — révisions B3 Data & IA
 
-> À utiliser pendant le créneau 14h-15h pour balayer les bases. **Pas une interro à apprendre par cœur** — un check que vous sauriez répondre **à voix haute en 30 sec** à chacune.
+> **Niveau attendu** : L3 dev fullstack qui a fait 28h de Data & IA. **Ce n'est pas un master.** Si vous savez répondre à **10 questions sur 20**, vous êtes au niveau. Si vous en avez 15+, vous êtes très bons. Si vous en avez 20+, vous êtes prêts pour un mastère data.
+>
+> **À utiliser** pendant le créneau 14h-15h. Pas pour apprendre par cœur — pour **vérifier que vous sauriez répondre en 30 sec à voix haute**.
 
 Si vous bloquez sur une question, allez voir le formateur (il circule pendant le créneau).
 
 ---
 
-## J1 — Big Data approfondi (8 questions)
+## J1 — Big Data approfondi (4 questions)
 
-1. **Spark — lazy evaluation** : qu'est-ce que c'est et pourquoi c'est utile ?
+1. **Big Data** — c'est quoi un « gros dataset » ? À partir de quand a-t-on besoin de Spark plutôt que Pandas ?
 
-2. **Spark — transformations vs actions** : donne 2 exemples de chaque type. Que se passe-t-il si tu n'appelles jamais une action ?
+2. **Spark — à quoi ça sert ?** En 1 phrase. *(Pas besoin d'expliquer la lazy eval en détail, mais savoir « ça permet de traiter des données qui ne tiennent pas en RAM »)*
 
-3. **Spark — DataFrame vs RDD** : quelle est la différence principale et pourquoi DataFrame est préféré aujourd'hui ?
+3. **SQL vs NoSQL** — quand préférer l'un ou l'autre ? Donne 1 exemple pour chaque.
 
-4. **SQL vs NoSQL** : quand choisir l'un ou l'autre ? Donne un cas d'usage typique pour chaque.
-
-5. **ETL** : à quoi correspondent les 3 lettres ? Quel maillon est généralement le plus coûteux en temps ?
-
-6. **Reproductibilité** : qu'est-ce qui rend un pipeline data **non reproductible** ? Cite 3 causes courantes.
-
-7. **EDA (Exploratory Data Analysis)** : pourquoi est-ce essentiel **avant** de modéliser ? Cite 3 choses que tu cherches.
-
-8. **Manquants (`NaN`)** : quelles sont les 3 stratégies courantes pour gérer les valeurs manquantes ? Quand utilise-t-on chacune ?
+4. **EDA (Exploratory Data Analysis)** — c'est quoi et pourquoi on en fait **avant** de modéliser ?
 
 ---
 
-## J2 — Machine Learning (10 questions)
+## J2 — Machine Learning (6 questions)
 
-9. **Pipeline sklearn** : pourquoi un `Pipeline()` est-il plus sûr qu'un preprocessing manuel ?
+5. **Régression vs classification** — quelle est la différence ? Donne 1 exemple de chaque dans ton projet ou un autre projet.
 
-10. **Train / validation / test** : à quoi servent ces 3 splits ? Pourquoi ne pas juste utiliser train + test ?
+6. **Train / test split** — pourquoi on sépare nos données en 2 ensembles avant d'entraîner ? Que se passe-t-il si on entraîne sur 100 % des données ?
 
-11. **Data leakage** : c'est quoi exactement, et donne 2 exemples concrets de comment ça arrive.
+7. **Overfitting** — c'est quoi simplement ? Comment on le détecte ?
 
-12. **Overfitting vs underfitting** : comment les diagnostiques tu ? Quelle est la stratégie pour chacun ?
+8. **Accuracy** — qu'est-ce que ça mesure ? Pourquoi c'est trompeur si on prédit toujours « non spam » sur un dataset 99 % non-spam / 1 % spam ?
 
-13. **Classification — accuracy** : pourquoi est-ce un piège sur un dataset déséquilibré (par exemple 95 % négatif / 5 % positif) ? Quelle métrique préférer ?
+9. **Précision vs Rappel** — explique chacune en 1 phrase. *(Tu peux prendre l'exemple d'un détecteur de spam, ou de fraude bancaire.)*
 
-14. **Précision vs rappel (recall)** : explique chacun en 1 phrase. Quand préférer l'un à l'autre ? Donne un exemple.
-
-15. **F1-score** : c'est quoi et pourquoi est-ce une métrique « équilibrée » ?
-
-16. **Régression — RMSE vs MAE** : quelle est la différence ? Quand RMSE est-elle préférable ?
-
-17. **Cross-validation** : à quoi ça sert ? Que fait `cross_val_score(model, X, y, cv=5)` ?
-
-18. **Sérialisation modèle** : pourquoi utilise-t-on `joblib` plutôt que `pickle` ? Quel est le risque de partager un `.pkl` reçu de quelqu'un d'autre ?
+10. **`model.pkl`** — c'est quoi ? À quoi ça sert ? Comment on l'utilise dans une API ?
 
 ---
 
-## J3 — Produit (8 questions)
+## J3 — Produit (5 questions)
 
-19. **Claude Code — boucle des 4 étapes** : cite-les dans l'ordre et explique pourquoi chacune est importante.
+11. **Claude Code** — c'est quoi la grande idée ? Pourquoi on ne demande pas juste « écris-moi le code » mais on suit une **boucle** ?
 
-20. **CLAUDE.md** : à quoi sert ce fichier ? Que mets-tu dedans ?
+12. **CLAUDE.md** — à quoi sert ce fichier dans ton repo ?
 
-21. **Plan mode (Claude Code)** : quand l'utiliser et pourquoi ? Quel est le risque de ne pas l'utiliser ?
+13. **React + FastAPI** — pourquoi on a une **API séparée** plutôt que de tout faire dans le front ?
 
-22. **React — hooks de base** : explique le rôle de `useState`, `useEffect`, et `useQuery` (TanStack) en 1 phrase chacun.
+14. **Endpoint `/api/predict`** — quel est son rôle dans ton projet ? Que reçoit-il en entrée ? Que renvoie-t-il en sortie ?
 
-23. **React — composant fonctionnel vs classe** : lequel est préféré aujourd'hui et pourquoi ?
-
-24. **FastAPI — Pydantic** : à quoi sert ce module dans un endpoint ? Donne un exemple.
-
-25. **FastAPI — async vs sync** : quelle est la différence ? Quand utiliser `async def` ?
-
-26. **FastAPI — middleware CORS** : à quoi sert CORS ? Pourquoi en a-t-on besoin en dev (front Vite sur 5173 + back FastAPI sur 8000) ?
+15. **Hugging Face Spaces** — c'est quoi ? Pourquoi on a choisi ça plutôt qu'un serveur classique ?
 
 ---
 
-## J4 — Industrialisation & Cloud (8 questions)
+## J4 — Industrialisation (5 questions)
 
-27. **HF Spaces — port 7860** : pourquoi cette valeur précise ? Que se passe-t-il si tu mets 8000 dans ton Dockerfile mais 7860 dans `app_port` du README ?
+16. **HF Spaces — pourquoi le port 7860 ?** *(Indice : c'est une convention HF.)*
 
-28. **HF Spaces — `app_port` dans le YAML du README** : à quoi ça correspond ? Pourquoi 3 endroits doivent matcher (Dockerfile EXPOSE + uvicorn `--port` + README `app_port`) ?
+17. **Docker** — c'est quoi à quoi ça sert dans ton projet ? En quoi c'est utile pour le déploiement ?
 
-29. **Dockerfile multi-stage** : à quoi ça sert ? Donne le cas d'usage typique d'un projet React + FastAPI.
+18. **GitHub Actions — c'est quoi un workflow ?** Donne un exemple de quand un workflow se déclenche.
 
-30. **GitHub Actions — anatomie d'un workflow** : explique brièvement ce que sont les `jobs`, `steps`, `runs-on`, `triggers (on:)`.
+19. **Secret (`HF_TOKEN`)** — pourquoi ne JAMAIS commiter un token directement dans le code ? Où on le met à la place ?
 
-31. **GitHub Actions — secrets** : pourquoi ne JAMAIS commiter un token en clair ? Comment on stocke un secret pour qu'un workflow puisse l'utiliser ?
-
-32. **CI/CD — triggers (`on:`)** : cite 3 triggers possibles. Donne un cas d'usage pour chacun (push, pull_request, schedule).
-
-33. **Monitoring `/api/health`** : à quoi sert un endpoint de healthcheck ? Comment l'utiliser en pratique ?
-
-34. **Cloud — HF Spaces vs Azure** : quels sont les **trois différences principales** entre HF Spaces et Azure App Service ? Quand passer de l'un à l'autre ?
-
----
-
-## Questions transversales / projet (5 questions)
-
-35. **Stack** : peux-tu dessiner sur tableau (à main levée) le pipeline complet de ton projet, du CSV brut à l'app HF ? Y compris CI/CD ?
-
-36. **Versioning** : si tu casses ton modèle et que ça plante en prod, comment tu reviens à la version d'avant ? Combien de temps ça prend ?
-
-37. **Coûts** : aujourd'hui sur HF tu paies 0 €. Si tu migres sur Azure App Service B1 (~13 €/mois), qu'est-ce que tu gagnes ? Qu'est-ce que tu perds ?
-
-38. **Sécurité** : quels sont les 3 risques sécurité principaux d'une app comme la tienne en prod ? (Input adversarial, injection, fuite de données, model theft, etc.)
-
-39. **Évolution** : si on te demandait d'ajouter une feature « batch prediction » (uploader un CSV de 1000 lignes et obtenir 1000 prédictions), comment tu t'y prendrais ? Quelles modifs sur ton API et ton front ?
+20. **`/api/health`** — quel est le rôle d'un endpoint healthcheck ? À quoi peut-il servir en prod ?
 
 ---
 
 ## Conseils de révision (5 min express)
 
-**Sprint final** : ne lisez pas les 39 questions. Faites comme ça :
+**Sprint final** : ne lisez pas les 20 questions une par une. Faites comme ça :
 
-1. Parcourir uniquement les **titres de section** (1 min)
-2. Identifier les **3-5 questions où vous bloquez** (2 min)
-3. Aller voir le formateur ou un coéquipier pour **éclaircir ces 3-5 points** (2 min)
-4. Repos cerveau jusqu'à 15h00
+1. **Parcourir uniquement les titres** (1 min)
+2. **Identifier les 3-5 questions où vous bloquez vraiment** (2 min)
+3. **Aller voir le formateur ou un coéquipier** pour éclaircir ces 3-5 points (2 min)
+4. **Souffler** jusqu'à 15h00 — un cerveau frais vaut mieux qu'un cerveau saturé
 
-**Ne réviser PAS ce que vous savez déjà.** Concentrez-vous sur les trous.
+**Ne révisez PAS ce que vous savez déjà.** Concentrez-vous sur les vrais trous.
+
+---
+
+## Ce qui est OK de ne pas savoir en B3
+
+Vous êtes des **développeurs fullstack** qui ont fait **28h de Data & IA** au total. Ce n'est pas une formation de Data Scientist. Vous n'êtes **pas** attendus sur :
+
+- ❌ Les détails internes de Spark (RDD vs DataFrame, transformations vs actions lazy, Catalyst optimizer...)
+- ❌ La validation croisée (cross-validation) en profondeur
+- ❌ Les détails mathématiques des métriques (formule exacte de F1, de la précision-rappel curve, ROC AUC...)
+- ❌ Le data leakage en profondeur (target leakage, train-test contamination, etc.)
+- ❌ Les hyperparamètres pointus (gridsearch, randomsearch, Bayesian optimization)
+- ❌ Le MLOps avancé (drift, A/B testing, model registry...)
+- ❌ Le tuning fin de FastAPI (Pydantic v2 avancé, async/await, dependency injection...)
+
+> **C'est normal**. Le mastère / la spécialisation, c'est là pour ça. Aujourd'hui on attend que vous **compreniez le pipeline complet** et que vous puissiez **expliquer ce que vous avez fait**. Pas que vous deveniez data scientist en 4 jours.
 
 ---
 
 ## Notation Q&A pendant la soutenance
 
-> Les 2-3 questions Q&A du formateur (dans les 3 min après votre pitch) pèsent dans le critère **« Soutenance orale » /3**.
+> Le formateur pose **2-3 questions** pendant la Q&A (les 3 min après votre pitch). Pas une interro de cours.
 
 | Réponse | Effet sur la note |
 |---|---|
-| Réponse précise, claire, 1-2 phrases | Maintient ou monte la note |
-| Réponse approximative mais qui montre la compréhension | Maintient la note |
-| « Je ne sais pas, mais mon intuition serait [...] » | **Maintient** la note (l'honnêteté est valorisée) |
-| Réponse inventée qui est fausse | **Fait baisser** la note (le formateur le voit) |
-| Silence ou « je sais pas, désolé » sans tentative | Fait baisser la note |
+| Réponse précise et claire en 1-2 phrases | ✅ Maintient ou monte la note |
+| Réponse approximative mais qui montre la compréhension | ✅ Maintient la note |
+| **« Je ne sais pas, mais mon intuition serait [...] »** | ✅ **Maintient** la note (l'honnêteté est valorisée) |
+| Réponse inventée qui est fausse | ❌ Fait baisser la note (le formateur le voit) |
+| Silence prolongé sans tentative | ❌ Fait baisser la note |
 
-> Mieux vaut **dire qu'on ne sait pas** avec une piste d'intuition, que d'inventer une réponse fausse. C'est aussi ce qu'on attend de vous **en stage / en job** quand vous serez face à un client.
+> **Mieux vaut dire qu'on ne sait pas** avec une piste d'intuition, que d'inventer une réponse fausse. C'est aussi ce qu'on attend de vous **en stage / en 1er job** quand vous serez face à un client / tech lead.
+
+---
+
+## Le mantra à retenir
+
+> *« Je ne sais pas tout. Je sais où chercher. Je sais ce que j'ai fait et pourquoi. C'est suffisant pour un junior. »*
