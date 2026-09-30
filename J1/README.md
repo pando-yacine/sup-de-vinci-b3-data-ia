@@ -17,10 +17,14 @@ Atelier 1 : dans Colab, **Fichier > Enregistrer une copie dans Drive** avant de 
 
 Pour aller plus loin : [`atelier1-pyspark-explain.ipynb`](ateliers/atelier1-pyspark-explain.ipynb), le word count PySpark de la session précédente.
 
+## Projet : démarrer avec le starter
+
+Créez le repo du groupe depuis **[b3-data-ia-projet-starter](https://github.com/pando-yacine/b3-data-ia-projet-starter)** (« Use this template ») : README à remplir, `CLAUDE.md`, second brain `docs/brain/` et commandes Claude (`/point`, `/decision`, `/journal`, `/verifie`). Règles d'usage de l'IA : [brief projet](projet-fil-rouge-brief.md#lia-sur-le-projet--autorisée-déclarée-vérifiée-comprise).
+
 ## Livrable J1 (à rendre sous 7 jours, vendredi 9 octobre 2026, 23h59)
 
 1. Un repo GitHub par groupe, public ou partagé avec `pando-yacine`, lien posté sur Qiplim.
 2. Le notebook d'exploration de votre dataset, qui tourne de haut en bas.
-3. Le README rempli à partir du [modèle](modele-README-projet.md), avec la **fiche projet** : question, cible, features, métrique, baseline naïve, risques.
+3. Le README (sections 1 à 4) et le **second brain** initialisé : `docs/brain/fiche-projet.md` (question, cible, features, métrique, baseline naïve, risques), `dataset.md`, une première décision, le journal de la séance.
 
 Détail des attendus et du barème : **[projet-fil-rouge-brief.md](projet-fil-rouge-brief.md)**.
