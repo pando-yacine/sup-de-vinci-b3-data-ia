@@ -1,70 +1,74 @@
-# Projet fil rouge B3 Data & IA -- Brief
+# Projet fil rouge · brief et évaluation
 
-> **Module** : Data & IA -- B3 fullstack Sup de Vinci Nantes
-> **Durée** : 4 jours (20-21 mai, 26-27 mai 2026)
-> **Format** : groupes de 2-3, choix du dataset en fin de J1
+> Data & IA · B3 DEV Sup de Vinci Nantes · 2026-2027 · formateur : Yacine Arhaliass
 
----
+## L'objectif
 
-## Objectif
-
-Construire un **pipeline data complet**, des données brutes jusqu'au déploiement cloud. Sur 4 jours, votre groupe traverse la même chaîne qu'un Data Engineer / Data Scientist en mission : collecte → nettoyage → modélisation ML → dashboard → mise en production sur Azure. À la fin du J4, vous présentez un produit qui tourne, pas un notebook orphelin.
+Construire en groupe un **produit data complet** : un dataset réel, nettoyé par un pipeline reproductible, un modèle de machine learning comparé à une baseline, exposé par une API, utilisé par une interface web, déployé en ligne. À la fin, vous le défendez devant un jury, démo à l'appui.
 
 ## Modalités
 
-- **Groupes** : 2 à 3 personnes (max). Constitution en fin de J1.
-- **Dataset** : choisi en fin de J1 parmi 5 options (premier arrivé, max 2 groupes par dataset).
-- **Outils imposés** : Python, Pandas/Scikit-learn, Streamlit, Azure App Service.
-- **Code** : un repo Git par groupe, commits réguliers.
-- **Notebook + app** sont les deux livrables techniques. La soutenance au J4 fait le lien.
+- **Groupes de 2 ou 3**, formés au J1. Chaque membre porte au moins une brique (données, modèle, API, front, déploiement) et sait expliquer toutes les autres.
+- **Dataset libre**, validé au J1 (critères plus bas). Maximum 2 groupes sur le même dataset.
+- **Un repo GitHub par groupe**, commits réguliers et parlants, partagé avec `pando-yacine`.
 
-## 5 datasets au choix
+## Stack
 
-Tous les datasets sont hébergés sur GitHub. Chargement direct depuis Colab :
-
-```python
-import pandas as pd
-BASE = "https://raw.githubusercontent.com/pando-yacine/sup-de-vinci-b3-data-ia/main/"
-df = pd.read_csv(BASE + "spotify_top_tracks.csv")  # remplacer par votre dataset
-```
-
-| # | Dataset | Lignes | Cible naturelle | URL |
-|---|---|---|---|---|
-| 1 | **Spotify Top Tracks** | ~33k | Prédire `popularity` (régression) ou `explicit` (classification) | `spotify_top_tracks.csv` |
-| 2 | **Accidents route France 2023** | ~50k | Prédire `gravite` (classification) | `accidents_route_france_2023.csv` |
-| 3 | **Prix immobilier Paris** | ~20k | Prédire `valeur_fonciere` (régression) | `prix_immobilier_paris_2024.csv` |
-| 4 | **Stats NBA 2022-23** | ~500 | Prédire `salary` ou `position` | `nba_players_2022_23.csv` |
-| 5 | **Logs serveur web** | ~100k | Détecter anomalies / classer `status_code` | `logs_serveur_web.csv` |
-
-Bonus optionnel : `jeux_video_steam.csv` (~30k jeux Steam) — prédire la note ou le succès commercial.
-
-Premier arrivé premier servi, **max 2 groupes par dataset**.
-
-## Livrables progressifs
-
-| Fin de jour | Livrable attendu |
-|---|---|
-| **J1 (20 mai)** | Dataset chargé sur Colab, exploration initiale (`.info()`, `.describe()`), 1 question prédictive formulée (cible `y`, features `X` candidates). |
-| **J2 (21 mai)** | Modèle baseline ML qui tourne (régression linéaire, logistique ou random forest), 1 métrique de performance affichée et commentée. |
-| **J3 (26 mai)** | Dashboard Streamlit **local** avec modèle intégré (input utilisateur → prédiction), 2-3 visualisations data, narratif. |
-| **J4 (27 mai)** | App déployée sur **Azure App Service** (URL publique), code sur GitHub, soutenance **8 min** + 4 min Q/R. |
-
-## Grille d'évaluation (/20)
-
-| Critère | Pts | Ce qu'on regarde |
+| Brique | Par défaut | Alternatives acceptées |
 |---|---|---|
-| Compréhension dataset | /4 | EDA propre, choix de la question prédictive justifié, conscience des biais et limites du dataset |
-| Pipeline data | /4 | Nettoyage reproductible, gestion des manquants et types, séparation train/val/test correcte, pas de leakage |
-| Modèle ML | /5 | Baseline pertinent, métriques adaptées au problème, comparaison d'au moins 2 modèles, justification du final |
-| Dashboard | /4 | Streamlit fonctionnel en local et déployé, UX lisible, prédiction interactive, viz exploitables |
-| Soutenance | /3 | 8 min tenues, démo live qui marche, répartition du temps de parole équilibrée, réponses solides en Q/R |
+| Données | Pandas (+ PySpark sur une étape) | Polars, DuckDB |
+| Modèle | Scikit-learn | XGBoost, LightGBM, CatBoost |
+| API | FastAPI (`/predict`) | |
+| Interface | React | Streamlit, Dash (outils du syllabus) |
+| Déploiement | Docker sur Hugging Face Spaces | Azure App Service, AWS |
+| CI/CD | GitHub Actions (bonus) | |
 
-## Conseils d'organisation
+## Livrables, jour par jour
 
-- **Cadrez la question prédictive dès J1**. Un projet flou en J1 = panique en J4. Une cible `y` claire + 3-5 features candidates suffit pour démarrer.
-- **Baseline simple d'abord, optimisation après**. Une régression linéaire ou un RandomForest par défaut est plus utile qu'un XGBoost mal réglé. Vous comparez ensuite.
-- **Versionnez tout sur Git dès J1**. Branche `main` propre, commits par étape. Un repo bordélique se paie en démo.
-- **Préparez le déploiement Azure dès J3 soir, pas J4 matin**. Le déploiement initial casse toujours quelque chose (variables d'env, requirements.txt, port). Anticipez.
-- **Répartissez les rôles dans le binôme/trinôme** : data/modèle vs dashboard/déploiement. Vous gagnez 30 % de temps avec un découpage net.
+| Fin de | Livrable |
+|---|---|
+| **J1** (à rendre sous 7 jours, vendredi 9 octobre 2026, 23h59) | Repo créé, README rempli à partir du [modèle](modele-README-projet.md) avec la fiche projet, notebook d'exploration qui tourne de haut en bas |
+| **J2** | Preprocessing reproductible (train/test séparés AVANT tout traitement), baseline naïve + au moins 2 modèles comparés sur une métrique justifiée, modèle sauvegardé. Bonus : une brique non supervisée (clustering) évaluée (score de silhouette) et interprétée |
+| **J3** | API FastAPI `/predict` qui charge le modèle + interface avec saisie, prédiction et 2 ou 3 visualisations, qui tourne en local |
+| **J4** | Application déployée (URL publique), README pro (installation, architecture, limites), soutenance |
 
-Le projet est noté sur la **trajectoire** autant que sur le résultat final. Un dataset modeste avec un pipeline propre vaut mieux qu'un dataset ambitieux laissé en chantier.
+## Évaluation
+
+| Part | Qui | Contenu |
+|---|---|---|
+| **40 % · projet continu** | groupe | 4 jalons à 10 % chacun : J1 cadrage, J2 modèle, J3 application, J4 déploiement et README. Chaque jalon est noté sur ce qui est dans le repo à l'échéance |
+| **30 % · soutenance** | groupe, modulée par personne (±2 points) | 10 min de présentation avec démo live + questions. La modulation dépend des réponses individuelles |
+| **30 % · rapport individuel** | individuel | 3 à 5 pages, rendu sous 7 jours après le J4 |
+
+Bonus : **+1** si un CI/CD GitHub Actions vert est montré en démo. Pénalité : **-1** si un secret (clé API, mot de passe) est committé dans le repo.
+
+### Ce qu'on regarde à chaque jalon
+
+- **J1 cadrage** : question claire (qui, quoi, pourquoi), dataset compris (taille, ce qu'une ligne représente, limites), cible et features cohérentes, métrique justifiée, baseline naïve définie, risques identifiés (fuite de données, biais, taille).
+- **J2 modèle** : pipeline reproductible, pas de fuite de données, comparaison chiffrée contre la baseline, métrique commentée (« 0,85 c'est bien » ne suffit pas).
+- **J3 application** : l'API répond, l'interface est lisible, les visualisations racontent quelque chose sur les données.
+- **J4 déploiement** : l'URL fonctionne, le README permet à un inconnu de comprendre et relancer le projet.
+
+### Soutenance
+
+- **Format** : 10 minutes de présentation (problème, données, démarche, démo, limites) puis questions. Tout le groupe parle.
+- **Démo** : en live, avec un **plan B** prêt (captures d'écran ou vidéo) : une démo qui plante sans plan B coûte cher.
+- **Les membres sont alignés** : mêmes chiffres, mêmes métriques. Un score qui change d'un orateur à l'autre fait perdre des points.
+- **On parle fort**, face au jury, pas à l'écran.
+
+### Rapport individuel (3 à 5 pages)
+
+Votre contribution personnelle, vos choix techniques justifiés, les difficultés et comment vous les avez surmontées, un regard critique (limites du modèle, biais des données, ce que vous referiez autrement).
+
+## Choisir son dataset
+
+**Critères de validation** : au moins 1 000 lignes et une dizaine de colonnes · une cible évidente à prédire · une source citable et une licence qui autorise l'usage · pas un dataset déjà travaillé par votre groupe en B2 · un sujet que vous savez expliquer à un non-expert.
+
+**Où chercher** : Kaggle, data.gouv.fr, INSEE, Hugging Face datasets, API publiques (Open-Meteo, API sportives). Les [datasets de secours](../README.md#datasets-de-secours) du repo en dernier recours.
+
+Bonus apprécié : enrichir avec une deuxième source (météo, référentiel géographique) et le justifier.
+
+## Ce qui a fait la différence dans la promo précédente
+
+- **Bien noté** : repo rangé (code, données, docs séparés), plusieurs modèles comparés avec des chiffres, biais et limites dits avant qu'on les demande, CI/CD démontré en live.
+- **Points perdus** : démo sans plan B, un R² de 0,24 jamais remis en question, une prédiction qui renvoie toujours la même valeur (le modèle prédit la moyenne), deux membres qui annoncent deux scores différents, voix trop faible.

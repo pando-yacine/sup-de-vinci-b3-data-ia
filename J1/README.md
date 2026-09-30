@@ -1,39 +1,26 @@
-# J1 — Big Data approfondi + Spark hands-on
+# J1 · Du Big Data au projet data
 
-> 20 mai 2026 · Sup de Vinci Nantes · 7h (9h15 — 17h15)
+> Vendredi 2 octobre 2026 · 9h15-12h45 / 13h45-17h15 · Support en ligne : https://pando-studio.com/cours/b3-data-ia/j1/
 
-## Thème de la journée
+## Au programme
 
-Du B2 au B3 : on revoit les fondamentaux Big Data et on approfondit Spark **sous le capot** (Driver/Executors, lazy evaluation, Catalyst, `.explain()`, DAG).
-
-## Sommaire des ressources
-
-- **[Brief projet fil rouge](projet-fil-rouge-brief.md)** — Le brief 4 jours à lire en premier (livrables, datasets, grille /20)
-- **[Quiz diagnostic B2](quiz-diagnostic-10Q.md)** — 10 questions de récap B2 (utilisé en début de matinée sur Qiplim)
+Spark sous le capot (Driver, executors, partitions, lazy evaluation, shuffle, Catalyst, `.explain()`), l'architecture data en 2026 (lake, warehouse, lakehouse, Parquet), puis le lancement du projet fil rouge.
 
 ## Ateliers
 
-- **[Atelier 1 — MapReduce papier + démo PySpark](ateliers/exercice-mapreduce-papier.md)** (texte papier + suite ci-dessous)
-  - Phase 1 papier : 3 paragraphes à compter par 3 groupes (15 min)
-  - Phase 2 code : [`atelier1-pyspark-explain.ipynb`](ateliers/atelier1-pyspark-explain.ipynb) (30 min) — découvrir `.explain()`, lazy eval, Spark UI
-- **[Atelier 2 — Mini-pipeline Colab (Pandas → PySpark)](ateliers/atelier2-mini-pipeline-spark.ipynb)** (1h15)
-  - Charger CSV + JSON, explorer, nettoyer, joindre, analyser, visualiser
-  - Bonus B3 : refaire l'agrégation en PySpark, comparer
+| Atelier | Quand | Notebook |
+|---|---|---|
+| **Atelier 1 · Spark sur 3 millions de courses de taxi** (en autonomie, en binôme) | 10h50-11h50 | [Ouvrir dans Colab](https://colab.research.google.com/github/pando-yacine/sup-de-vinci-b3-data-ia/blob/main/J1/ateliers/atelier1-spark-taxis-nyc.ipynb) · [fichier](ateliers/atelier1-spark-taxis-nyc.ipynb) |
+| **Atelier 2 · Le pipeline sur VOTRE dataset** (en groupe projet) | 14h05-15h20 | Squelette : [Ouvrir dans Colab](https://colab.research.google.com/github/pando-yacine/sup-de-vinci-b3-data-ia/blob/main/J1/ateliers/atelier2-mini-pipeline-spark.ipynb) (reprendre les 7 étapes sur vos données) |
 
-## Comment ouvrir les notebooks sur Colab
+Atelier 1 : dans Colab, **Fichier > Enregistrer une copie dans Drive** avant de commencer. Les cellules `# À VOUS` sont à compléter, la solution est repliée juste en dessous. Les 4 questions finales se postent sur Qiplim (une réponse par binôme).
 
-1. Clic droit sur le `.ipynb` → "Open with" → "Colab"
+Pour aller plus loin : [`atelier1-pyspark-explain.ipynb`](ateliers/atelier1-pyspark-explain.ipynb), le word count PySpark de la session précédente.
 
-Ou directement :
+## Livrable J1 (à rendre sous 7 jours, vendredi 9 octobre 2026, 23h59)
 
-```
-https://colab.research.google.com/github/pando-yacine/sup-de-vinci-b3-data-ia/blob/main/J1/ateliers/atelier1-pyspark-explain.ipynb
-https://colab.research.google.com/github/pando-yacine/sup-de-vinci-b3-data-ia/blob/main/J1/ateliers/atelier2-mini-pipeline-spark.ipynb
-```
+1. Un repo GitHub par groupe, public ou partagé avec `pando-yacine`, lien posté sur Qiplim.
+2. Le notebook d'exploration de votre dataset, qui tourne de haut en bas.
+3. Le README rempli à partir du [modèle](modele-README-projet.md), avec la **fiche projet** : question, cible, features, métrique, baseline naïve, risques.
 
-## En fin de J1
-
-Chaque groupe a :
-- Son dataset choisi (parmi les 5 du projet fil rouge)
-- 1 question prédictive formulée (cible `y`, features `X` candidates)
-- Le notebook prêt pour ajouter le modèle ML demain
+Détail des attendus et du barème : **[projet-fil-rouge-brief.md](projet-fil-rouge-brief.md)**.
