@@ -48,4 +48,13 @@ Un dataset déjà travaillé par votre groupe en B2 n'est pas accepté.
 - [Glossaire J1-J2](glossaire-J1-J2.md) : 124 termes data et ML
 - [Fiche algorithmes ML](fiche-algos-ML.md) · [Fiche essentiels J1-J2](fiche-essentiels-J1-J2.md)
 
+## Pour aller plus loin : IA, data et souveraineté
+
+| Vidéo | Date | Sujet |
+|---|---|---|
+| [Arthur Mensch (Mistral AI) auditionné à l'Assemblée nationale](https://www.youtube.com/watch?v=kKWOkWv6pJM) | 12/05/2026 | Commission d'enquête sur les vulnérabilités du secteur du numérique : l'IA comme ressource, la dépendance aux acteurs américains |
+| [Octave Klaba (OVHcloud) auditionné à l'Assemblée nationale](https://www.youtube.com/watch?v=vyJI8t_h12E) | 30/09/2026 | Commission des affaires économiques : datacenters, cloud, souveraineté des données, investir dans l'IA en Europe |
+| [Quentin Adam (Clever Cloud) sur Underscore_ : « On ne paie plus les développeurs pour écrire du code ? »](https://www.youtube.com/watch?v=AiytemqB_F0) | 07/09/2026 | Industrialiser l'IA dans le développement logiciel |
+| [Yann Le Cun à Sciences Po : « Où va l'intelligence artificielle ? »](https://www.youtube.com/watch?v=Y4s8NadbZfU) | 16/09/2026 | Les limites des LLM, les world models |
+
 Datasets issus de sources publiques (data.gouv.fr, TidyTuesday, basketball-reference, Hugging Face, NYC TLC). Usage pédagogique.
